@@ -39,7 +39,45 @@ function create_service_post_type()
 
     register_post_type('webtech-service', $args);
 
+    //CPT for Staff 
+    $labels = array(
+			'name' => __('Staffs', 'post type general name'),
+			'singular_name' => __('Staff', 'post type singular name'),
+			'add_new' => __('Add New', 'Specialty'),
+			'add_new_item' => __('Add New Staff'),
+			'edit_item' => __('Edit Staff'),
+			'new_item' => __('New Staff'),
+			'view_item' => __('View Staff'),
+			'search_items' => __('Search Staffs'),
+			'not_found' => __('No staffs found'),
+			'not_found_in_trash' => __('No staffs found in Trash'),
+			'parent_item_colon' => '',
+			'menu_name' => 'Staffs'
+	);
 
+	$args = array(
+			'labels' => $labels,
+			'public' => true,
+			'publicly_queryable' => true,
+			'show_ui' => true,
+			'show_in_menu' => true,
+			'show_in_rest' => true,
+			'query_var' => true,
+			'rewrite' => array('slug' => 'staff'),
+			'capability_type' => 'post',
+			'has_archive' => true,
+			'hierarchical' => false,
+			'menu_position' => null,
+			'menu_icon' => 'dashicons-admin-tools',
+			'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+			'template' => array(
+					array('core/paragraph'),
+					array('core/button'),
+			),
+			'template_lock' => 'all',
+	);
+
+	register_post_type('webtech-staff', $args);
 
     //CPT for Testimonials 
     $labels = array(
