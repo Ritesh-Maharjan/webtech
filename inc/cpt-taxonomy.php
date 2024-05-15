@@ -37,7 +37,7 @@ function create_service_post_type()
         ),
     );
 
-    register_post_type('bdw-service', $args);
+    register_post_type('webtech-service', $args);
 
 
 
@@ -78,7 +78,7 @@ function create_service_post_type()
         'template_lock' => 'all'
     );
 
-    register_post_type('bdw-testimonial', $args);
+    register_post_type('webtech-testimonial', $args);
 
 }
 add_action('init', 'create_service_post_type');
