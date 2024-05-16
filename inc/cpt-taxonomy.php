@@ -68,7 +68,7 @@ function create_service_post_type()
 			'has_archive' => true,
 			'hierarchical' => false,
 			'menu_position' => null,
-			'menu_icon' => 'dashicons-admin-tools',
+			'menu_icon' => 'dashicons-admin-users',
 			'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
 			'template' => array(
 					array('core/paragraph'),
@@ -108,7 +108,7 @@ function create_service_post_type()
         'has_archive' => true,
         'hierarchical' => false,
         'menu_position' => null,
-        'menu_icon' => 'dashicons-admin-users',
+        'menu_icon' => 'dashicons-welcome-write-blog',
         'supports' => array('title', 'editor', 'thumbnail'),
         'template' => array(
             array('core/paragraph'),
@@ -118,5 +118,44 @@ function create_service_post_type()
 
     register_post_type('webtech-testimonial', $args);
 
+
+		    //CPT for Works 
+    $labels = array(
+        'name' => __('Work', 'post type general name'),
+        'singular_name' => __('Staff', 'post type singular name'),
+        'add_new' => __('Add New', 'Specialty'),
+        'add_new_item' => __('Add New Staff'),
+        'edit_item' => __('Edit Staff'),
+        'new_item' => __('New Staff'),
+        'view_item' => __('View Staff'),
+        'search_items' => __('Search Work'),
+        'not_found' => __('No Work found'),
+        'not_found_in_trash' => __('No Work found in Trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Work'
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_rest' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'work'),
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => null,
+        'menu_icon' => 'dashicons-welcome-write-blog',
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'template' => array(
+            array('core/paragraph'),
+        ),
+        'template_lock' => 'all'
+    );
+
+    register_post_type('webtech-work', $args);
 }
 add_action('init', 'create_service_post_type');
