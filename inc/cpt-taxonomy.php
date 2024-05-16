@@ -148,7 +148,7 @@ function create_service_post_type()
         'has_archive' => true,
         'hierarchical' => false,
         'menu_position' => null,
-        'menu_icon' => 'dashicons-welcome-write-blog',
+        'menu_icon' => 'dashicons-star-filled',
         'supports' => array('title', 'editor', 'thumbnail'),
         'template' => array(
             array('core/paragraph'),
