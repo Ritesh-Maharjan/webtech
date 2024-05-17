@@ -119,7 +119,7 @@ function create_service_post_type()
     register_post_type('webtech-testimonial', $args);
 
 
-		    //CPT for Works 
+	//CPT for Works 
     $labels = array(
         'name' => __('Work', 'post type general name'),
         'singular_name' => __('Staff', 'post type singular name'),
@@ -153,7 +153,7 @@ function create_service_post_type()
         'template' => array(
             array('core/paragraph'),
         ),
-        'template_lock' => 'all'
+        
     );
 
     register_post_type('webtech-work', $args);
